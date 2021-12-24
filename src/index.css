@@ -7,9 +7,9 @@
 
 .App {
   min-height: 100vh;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .errorMessage {
@@ -18,9 +18,8 @@
 }
 
 .form_container {
-  width: 70%;
-  background: whitesmoke;
   min-height: 70vh;
+  width: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +100,8 @@ form {
 }
 
 .btnFacebook {
-  width: 100%;
+  width: 45px;
+  height: 45px;
   margin: 1rem 0;
   background: blue;
   color: #fff;
@@ -109,6 +109,9 @@ form {
   padding: 0.4rem 0;
   font-size: 1.3rem;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar {
@@ -256,9 +259,24 @@ form {
 /* main------- */
 
 .main_wrapper {
-  margin: 14vh 0 10vh 0;
+  margin: 13vh 0 10vh 0;
   height: 76vh;
   overflow: auto;
+  background: #f5f5f5;
+}
+
+/* home nav */
+
+.home_nav {
+  cursor: pointer;
+}
+.home_nav:last-child {
+  margin-left: 1rem;
+}
+
+.home_nav_item {
+  text-decoration: underline;
+  color: #66180d;
 }
 
 /* card */
@@ -286,4 +304,10 @@ form {
 .c_actions {
   display: flex;
   justify-content: space-between;
+}
+
+.cart_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

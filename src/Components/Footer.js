@@ -9,7 +9,7 @@ const Footer = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Adidas_Logo.svg/2560px-Adidas_Logo.svg.png"
           alt="logo"
         />
-        <div>VirDrobe</div>
+        <div>E-Commerce</div>
       </div>
       <ul className="ft_list">
         <li>

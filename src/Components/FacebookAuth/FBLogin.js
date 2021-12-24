@@ -22,7 +22,7 @@ const FBLogin = ({ renderComp }) => {
           <i className="fab fa-facebook-f" style={{ marginLeft: "5px" }}></i>
         }
         cssClass="btnFacebook"
-        textButton="&nbsp;&nbsp;"
+        textButton="&nbsp;"
       />
     </>
   );

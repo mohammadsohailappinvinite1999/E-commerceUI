@@ -5,8 +5,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import { ShoppingCart } from "@mui/icons-material";
+import { useSelector } from "react-redux";
+import { getCartState } from "../Features/CartSlice";
+import { styled } from "@mui/system";
 
 const Navbar = () => {
+  const { cart } = useSelector(getCartState);
+
   return (
     <div className="navbar">
       <div className="input_wrapper">
@@ -19,17 +24,17 @@ const Navbar = () => {
             <FavoriteBorderIcon sx={{ color: "#66180d" }} />
           </Badge>
         </Link>
-        <Link to="/">
-          <Badge badgeContent={4} sx={{ color: "#66180d" }}>
+        <Link to="/cart">
+          <Badge badgeContent={cart.length} sx={{ color: "#66180d" }}>
             <ShoppingCart sx={{ color: "#66180d" }} />
           </Badge>
         </Link>
-     
-     <Link to="/">
-     <Badge badgeContent={4} sx={{ color: "#66180d" }}>
-          <NotificationsNoneIcon sx={{ color: "#66180d" }} />
-        </Badge>
-     </Link>
+
+        <Link to="/">
+          <Badge badgeContent={4} sx={{ color: "#66180d" }}>
+            <NotificationsNoneIcon sx={{ color: "#66180d" }} />
+          </Badge>
+        </Link>
         <Avatar>M</Avatar>
         <select defaultValue={"Hi, Jason"} name="select" id="select">
           <option value="Hi Jason">Hi, Jason</option>

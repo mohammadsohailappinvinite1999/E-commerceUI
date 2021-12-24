@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useFormik } from "formik";
 import Input from "../../Components/Input";
 import { Button } from "@mui/material";
 import { validationSchema } from "../../Schemas/FormSchema";
 import FileUpload from "../../Components/FileUpload";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getAuthState } from "../../Features/AuthSlice";
+import {
+  Container,
+  Wrapper,
+} from "../../Components/StyledComponents/AuthScreens/AuthScreenComponents";
+import AuthScreensLayout from "../../Components/StyledComponents/AuthScreens/AuthScreensLayout";
+import { CustomBrownButton } from "../../Components/Customs/CustomButton";
 
 const Signup = () => {
   const {
@@ -33,11 +41,21 @@ const Signup = () => {
     validationSchema,
   });
 
-  // console.log(values);
+  const { auth } = useSelector(getAuthState);
+
+  const location = useLocation();
+  let from = location?.state?.from ? location?.state?.from?.pathname : "/";
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    auth && navigate(from);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [auth]);
 
   return (
-    <div className="form_container">
-      <h1>Sign Up</h1>
+    <AuthScreensLayout>
+      <h3>Sign Up</h3>
       <form onSubmit={handleSubmit}>
         <FileUpload
           name={"file"}
@@ -102,14 +120,17 @@ const Signup = () => {
             Keep me Logged in
           </label>
         </div>
-        <Button variant="contained" type={"submit"} fullWidth>
+        <CustomBrownButton variant="contained" type={"submit"} fullWidth>
           Sign Up
-        </Button>
+        </CustomBrownButton>
         <div style={{ margin: "1rem 0" }}>
-          Already have a account? <Link to="/">Sign in</Link>
+          Already have a account?{" "}
+          <Link style={{ color: "#66180d" }} to="/">
+            Sign in
+          </Link>
         </div>
       </form>
-    </div>
+    </AuthScreensLayout>
   );
 };
 

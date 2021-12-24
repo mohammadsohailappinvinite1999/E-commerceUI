@@ -36,8 +36,8 @@ const Sidebar = () => {
             alt="logo"
           />
         </div>
-        <Typography variant="h5" marginLeft="10px">
-          Virdrobe
+        <Typography variant="p" marginLeft="10px">
+          E-commerce
         </Typography>
       </Toolbar>
       <ul className="sidelinks_wrapper">

@@ -34,6 +34,15 @@ const Practice = () => {
   };
 
   const accessCameraandVideo = async () => {
+    navigator.permissions
+      .query({ name: "microphone" })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     let audioAccess = null;
     let videoAccess = null;
     try {

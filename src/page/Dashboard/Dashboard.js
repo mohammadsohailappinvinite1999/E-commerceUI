@@ -5,13 +5,15 @@ import Sidebar from "../../Components/Sidebar";
 import { Outlet } from "react-router-dom";
 import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer";
+import SideBarDrawer from "../../Components/SideBarDrawer";
 const Dashboard = () => {
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container sx={{ height: "100vh" }}>
           <Grid item xs={2}>
-            <Sidebar />
+            {/* <Sidebar /> */}
+            <SideBarDrawer/>
           </Grid>
           <Grid item xs={10} sx={{ height: "100vh", overflow: "auto" }}>
             <Navbar />

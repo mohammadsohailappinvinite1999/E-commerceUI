@@ -1,4 +1,3 @@
-import { styled } from "@mui/material/styles";
 import {
   Avatar,
   Button,
@@ -14,17 +13,9 @@ import React from "react";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import ChatIcon from "@mui/icons-material/Chat";
 import IosShareIcon from "@mui/icons-material/IosShare";
+import { CustomBrownButton } from "./Customs/CustomButton";
 
-const ColorButton = styled(Button)(({ theme }) => ({
-  color: "#fff",
-  backgroundColor: "#66180d",
-  "&:hover": {
-    backgroundColor: "#fff",
-    color: "#66180d",
-  },
-}));
-
-const CardUI = ({ src }) => {
+const CardUI = ({ src, latest }) => {
   return (
     <Card sx={{ boxShadow: "none" }} raised={false}>
       <CardMedia component="img" height="194" image={src} alt="image1" />
@@ -41,7 +32,7 @@ const CardUI = ({ src }) => {
               </Typography>
             </div>
           </div>
-          <ColorButton variant="contained">Follow</ColorButton>
+          <CustomBrownButton variant="contained">Follow</CustomBrownButton>
         </div>
       </CardContent>
       <CardActions className="c_actions">
