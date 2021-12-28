@@ -4,7 +4,7 @@ import { CustomBrownButton } from "./Customs/CustomButton";
 import { useDispatch } from "react-redux";
 import { addtoCart } from "../Features/CartSlice";
 
-const LatestCard = ({ src, title, price, item }) => {
+const LatestCard = ({ src, title, price, item, contain }) => {
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
@@ -32,8 +32,13 @@ const LatestCard = ({ src, title, price, item }) => {
       </Snackbar>
 
       <Card sx={{ boxShadow: "none" }} raised={false}>
-        <CardMedia component="img" height="194" image={src} alt="image1" />
-
+        <CardMedia
+          component="img"
+          height="194"
+          image={src}
+          style={{ objectFit: contain ? "contain" : "none" }}
+          alt="image1"
+        />
         <div style={{ margin: "1rem 0" }} className="c_wrapper">
           <div className="avt_wrapper">
             <div>
